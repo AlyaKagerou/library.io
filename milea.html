@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="darkmodeHome.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="shortcut icon" href="favicon_io/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Milea: Suara dari Dilan</title>
+    <style>
+        li{
+            font-family: Arial Rounded MT;
+        }
+        li a{
+            text-decoration: none;
+            font-family: Arial Rounded MT;
+        }
+        #link{
+            color: black;
+        }
+        #link:hover{
+            color:#0DAA27;
+        }
+        #more{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!---navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #DDDDDD;">
+        <div class="container">
+            <a class="navbar-brand" style="font-size:45px; color:#0DAA27; font-family: Poetsen One;">Library.io</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" style="font-family: Arial Rounded Mt; font-size:20px;"aria-current="page" href="Home.php">Beranda</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" style="font-family: Arial Rounded Mt; font-size:20px;" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Setting</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <div class="custom-control custom-switch" style="margin-left: 10px;">
+                                    <input type="checkbox" class="custom-control-input" id="darkSwitch">
+                                    <label class="custom-control-label" for="darkSwitch" style="font-family: Arial Rounded MT; color:#519872;">Dark mode</label>
+                                </div>
+                                <li><a class="dropdown-item" style="font-family: Arial Rounded Mt;" href="index.php">Log Out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!---navbar-->
+
+    <!--breadcrumb/halaman yang sudah dilewati-->
+    <div class="container" style="padding-top: 7rem;">
+        <div class="row">
+            <div class="col">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a class="h6" id="link" href="Home.php">Home</a></li>
+                    <li class="breadcrumb-item"><a class="h6" id="link" href="KatalogNovel.php">Novel</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Milea: Suara dari Dilan</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumb/halaman yang sudah dilewati-->
+
+    <!--detail buku-->
+    <div class="container">
+        <div class="row" style="padding-top: 1px;">
+            <div class="col-sm-3">
+                <div class="card">
+                    <img src="image/coverdilan3.png" class="img-fluid">
+                </div>
+                <a href="https://drive.google.com/file/d/1csejsU1rEauw3I9aVWrQ1yO551Q_a83h/view?usp=sharing" class="btn" style="font-family: Arial Rounded MT; margin-top:10px; background-color:#0DAA27;"><i class="bi bi-file-earmark-arrow-down-fill"></i>   Link Download</a>
+            </div>
+            <div class="col-sm-3 col-sm-9" style="padding-top: 20px;">
+                <nav id="navbar-example2" class="navbar navbar-light px-3" style="background-color: #DDDDDD;">
+                    <a class="navbar-brand" href="#" style="font-family: Arial Rounded MT; color:#0DAA27;">Milea: Suara dari Dilan</a>
+                    <div class="p-1">
+                        <i class="bi bi-star-fill" style="color: #FFCA03;"></i>
+                        <i class="bi bi-star-fill" style="color: #FFCA03;"></i>
+                        <i class="bi bi-star-fill" style="color: #FFCA03;"></i>
+                        <i class="bi bi-star-fill" style="color: #FFCA03;"></i>
+                        <i class="bi bi-star-half" style="color: #FFCA03"></i>
+                    </div>
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#scrollspyHeading1" style="color: black;">Deskripsi Buku</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#scrollspyHeading2" style="color: black;">Detail Buku</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div data-bs-spy="scroll" data-bs-target="#navbar-example2" style="height: 280px; overflow-y:scroll;"
+                    data-bs-offset="0" class="scrollspy-example" tabindex="0">
+                    <h5 id="scrollspyHeading1" class="card-title" style="padding-top: 20px;">Deskripsi Buku</h5>
+                    <p class="h6" style="padding: 10px;">
+                    Novel ini menceritakan mengenai kehidupan seseorang yang bernama Dilan, dari masakecil, remaja, hingga ia dewasa. Masa kecilnya dimulai dengan cita-citanya sebagaiseorang macan yang tentunya mustahil. 
+                    Ia pun gemar bermain sepeda yang ia namakan “mobil derek”, sehingga ia selalu terkesan keren saat bermain dengan mobil dereknya. Ayah Dilan adalah seorang anggota TNI-AD yang terpaksa jarang bertemu dengannyakarena mendapat tugas di luar kota. 
+                    Bunda Dilan adalah seorang kepala sekolah di salahsatu SMA di Bandung. Pastinya bukan kepala sekolah di SMA-nya Dilan. 
+                    Dilan juga memiliki satu adik perempuan yang umurnya tidak jauh dengannya.
+                    </p>
+                    <h5 id="scrollspyHeading2" class="card-title" style="padding-top: 20px;">Detail Buku</h5>
+                    <p class="h6"><b>Jumlah Halaman :</b> 354 </p>
+                    <p class="h6"><b>Tanggal Terbit :</b> 4 Juni 2020 </p>
+                    <p class="h6"><b>Bahasa :</b> Indonesia </p>
+                    <p class="h6"><b>Penerbit :</b> Mizan Publishing</p>
+                    <p class="h6"><b>Pengarang :</b> Pidi Baiq </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--detail buku-->
+
+    <!--footer-->
+    <footer class="p-2 text-center" style="background-color: #4E9F3D; margin-top: 63px;">
+      <p class="text-lg-center" style="font-family: Montserrat; font-size: 18px; color: black;">&copy 2021 All reserved | Design by Zhalz&Friend</p>
+    </footer>
+    <!--footer-->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/dark-mode-switch.js"></script>
+    <script src="js/Jquery.js"></script>
+</body>
+</html>

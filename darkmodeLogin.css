@@ -1,0 +1,30 @@
+/*login&signup*/
+[data-theme= "dark"] {
+    background-color: black !important;
+}
+[data-theme= "dark"] .login-form {
+    background-color: #191A19 !important;
+}
+[data-theme= "dark"] .card-title {
+    color :#91c788 !important;
+}
+[data-theme= "dark"] .mb-3 {
+    color: #91c788 !important;
+}
+[data-theme= "dark"] .d-grid {
+    color: #91c788 !important;
+}
+[data-theme= "dark"] .signup {
+    color: #91c788 !important;
+}
+[data-theme= "dark"] .btn {
+    background-color: #91c788 !important;
+    color: black !important;
+}
+[data-theme= "dark"] .custom-control {
+    color: #91c788 !important;
+}
+[data-theme= "dark"] .p-2 {
+    background-color: #91c788 !important;
+}
+/*login&signup*/

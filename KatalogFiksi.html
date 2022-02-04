@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="darkmodeHome.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="shortcut icon" href="favicon_io/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Katalog Fiksi</title>
+    <style>
+        li{
+            font-family: Arial Rounded MT;
+        }
+        li a{
+            text-decoration: none;
+        }
+        ul li a{
+            text-decoration: none;
+            font-family: Arial Rounded MT;
+        }
+        div a{
+            font-family: Arial Rounded MT;
+        }
+        #link{
+            color:black;
+        }
+        #link:hover{
+            color: #0DAA27;
+        }
+        #TopBtn{
+            position: fixed;
+            bottom: 90px;
+            right: 30px;
+            width: 40px;
+            height: 35px;
+            border: none;
+        }
+        .setan{
+            width: 40px;
+            height: 30px;
+            background-color: #C9CCD5;
+            border-radius: 40px 40px 0 0;
+            position: relative;
+            cursor: pointer;
+            animation: floating 2s infinite ease-in-out;
+        }
+        @keyframes floating{
+            50%{
+                transform: translateY(-30px);
+            }
+        }
+        .muka{
+            width:23px;
+            position: absolute;
+            top:10px;
+            left: calc(5px);
+        }
+        .mata{
+            height: 24px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .mata span{
+            width: 6px;
+            height:6px;
+            background-color: black;
+            border-radius: 50%;
+            transition: .3s linear;
+        }
+        .setan:hover .eyes span{
+            height: 1px;
+        }
+        .kaki{
+            position: absolute;
+            width: 100%;
+            bottom: -10px;
+            left: 0px;
+            display:flex;
+        }
+        .kaki span{
+            flex: 1;
+            height: 20px;
+            background-color: #C9CCD5;
+            border-radius: 0 0 20px 20px;
+        }
+        .kaki span:first-child{
+            border-radius: 0 0 20px 12px;
+        }
+        .kaki span:last-child{
+            border-radius: 0 0 12px 20px;
+        }
+        @media screen and (max-width: 576px) {
+            .btn{
+                margin: 10px;
+            }
+        }
+        @media screen and (max-width: 768px){
+            .btn{
+                margin: 10px;
+            }
+        }
+        @media screen and (max-width: 992px){
+            .btn{
+                margin:10px;
+            }
+        }
+        @media screen and (max-width: 1200px){
+            .btn{
+                margin:10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!---navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #DDDDDD;">
+        <div class="container">
+            <a class="navbar-brand" style="font-size:45px; color:#0DAA27; font-family: Poetsen One;">Library.io</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" style="font-family: Arial Rounded Mt; font-size:20px;"aria-current="page" href="Home.php">Beranda</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" style="font-family: Arial Rounded Mt; font-size:20px;" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Setting</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <div class="custom-control custom-switch" style="margin-left: 10px;">
+                                    <input type="checkbox" class="custom-control-input" id="darkSwitch">
+                                    <label class="custom-control-label" for="darkSwitch" style="font-family: Arial Rounded MT; color:#519872;">Dark mode</label>
+                                </div>
+                                <li><a class="dropdown-item" style="font-family: Arial Rounded Mt;" href="index.php">Log Out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!---navbar-->
+
+    <!--breadcrumb/halaman yang sudah dilewati-->
+    <div class="container" style="padding-top: 7rem;">
+        <div class="row">
+            <div class="col">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a class="h6" id="link" href="Home.php">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Fiksi</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumb/halaman yang sudah dilewati-->
+
+    <!---Katalog Novel-->
+    <div class="container">
+        <h1 class="display-1 text-center" style="font-family: Arial Rounded MT; font-size: 40px; color: #0DAA27; padding-top: 1rem;">Fiksi</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col" style="padding-top: 1rem;">
+                <a class="btn btn" style="background-color:#0DAA27;" href="#">#</a>
+                <a class="btn btn" style="background-color:#0DAA27;" href="#A">A</a>
+                <a class="btn btn" style="background-color:#0DAA27;" href="#B">B</a>
+                <a class="btn btn" style="background-color:#0DAA27;" href="#C">C</a>
+                <a class="btn btn" style="background-color:#0DAA27;" href="#D">D</a>
+                <a class="btn btn" style="background-color:#0DAA27;" href="#E">E</a>
+                <a class="btn btn" style="background-color:#0DAA27;" href="#F">F</a>
+                <a class="btn btn" style="background-color:#0DAA27;" href="#G">G</a>
+                <a class="btn btn" style="background-color:#0DAA27;" href="#H">H</a>
+                <a class="btn btn" style="background-color:#0DAA27;" href="#I">I</a>
+                <a class="btn btn" style="background-color:#0DAA27;" href="#J">J</a>
+                <a class="btn btn" style="background-color:#0DAA27;" href="#K">K</a>
+                <a class="btn btn" style="background-color:#0DAA27;" href="#L">L</a>
+                <a class="btn btn" style="background-color:#0DAA27;" href="#M">M</a>
+                <a class="btn btn" style="background-color:#0DAA27;" href="#N">N</a>
+                <a class="btn btn" style="background-color:#0DAA27;" href="#O">O</a>
+                <a class="btn btn" style="background-color:#0DAA27;" href="#P">P</a>
+                <a class="btn btn" style="background-color:#0DAA27;" href="#Q">Q</a>
+                <a class="btn btn" style="background-color:#0DAA27;" href="#R">R</a>
+                <a class="btn btn" style="background-color:#0DAA27;" href="#S">S</a>
+                <a class="btn btn" style="background-color:#0DAA27;" href="#T">T</a>
+                <a class="btn btn" style="background-color:#0DAA27;" href="#U">U</a>
+                <a class="btn btn" style="background-color:#0DAA27;" href="#V">V</a>
+                <a class="btn btn" style="background-color:#0DAA27;" href="#W">W</a>
+                <a class="btn btn" style="background-color:#0DAA27;" href="#X">X</a>
+                <a class="btn btn" style="background-color:#0DAA27;" href="#Y">Y</a>
+                <a class="btn btn" style="background-color:#0DAA27;" href="#Z">Z</a>
+            </div>
+        </div>
+    </div>
+    <!---Katalog Novel-->
+
+    <!---Judul berdasarkan abjad dari Novel-->
+    <section id="#">
+        <div class="container">
+            <h1 class="display-1 text-start" style="font-family: Arial Rounded MT; font-size:40px; padding-top: 20px; color:#0DAA27;">#</h1>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">5 cm</a></li>
+                        <li><a class="h6" id="link" href="">7 Hari Menembus Waktu</a></li>
+                        <li><a class="h6" id="link" href="">9 Summers 10 Autumns</a></li>
+                        <li><a class="h6" id="link" href="">12 menit</a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">1000 Musim Pengejar Bintang</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="A">
+        <div class="container">
+            <h1 class="display-1 text-start" style="font-family: Arial Rounded MT; font-size:40px; padding-top:7rem; color:#0DAA27;">A</h1>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="ACDSMA.html">Ada Cinta di SMA</a></li>
+                        <li><a class="h6" id="link" href="">Amba</a></li>
+                        <li><a class="h6" id="link" href="">Amelia</a></li>
+                        <li><a class="h6" id="link" href="">Anak Semua Bangsa</a></li>
+                        <li><a class="h6" id="link" href="">Antologi Rasa</a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Aroma Karsa</a></li>
+                        <li><a class="h6" id="link" href="">Aruna dan Lidahnya</a></li>
+                        <li><a class="h6" id="link" href="">Arus Balik</a></li>
+                        <li><a class="h6" id="link" href="">Assalamualaikum, Beijing!</a></li>
+                        <li><a class="h6" id="link" href="">Autumn In Paris</a></li>
+                        <li><a class="h6" id="link" href="">Ayah</a></li>
+                        <li><a class="h6" id="link" href="">Ayat-ayat Cinta</a></li>
+                        <li><a class="h6" id="link" href="ayatcinta2.html">Ayat-ayat Cinta 2</a></li>
+                        <li><a class="h6" id="link" href="">Ayahku (Bukan) Pembohong</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="B">
+        <div class="container">
+            <h1 class="display-1 text-start" style="font-family: Arial Rounded MT; font-size:40px; padding-top:7rem; color:#0DAA27;">B</h1>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Badai Pasti Berlalu</a></li>
+                        <li><a class="h6" id="link" href="">Bekisar Merah</a></li>
+                        <li><a class="h6" id="link" href="">Belenggu</a></li>
+                        <li><a class="h6" id="link" href="">Bidadari Bidadari Surga</a></li>
+                        <li><a class="h6" id="link" href="">Bintang</a></li>
+                        <li><a class="h6" id="link" href="">Bumi</a></li>
+                        <li><a class="h6" id="link" href="">Bumi Cinta</a></li>
+                        <li><a class="h6" id="link" href="">Bumi Manusia</a></li>
+                        <li><a class="h6" id="link" href="">Bulan</a></li>
+                        <li><a class="h6" id="link" href="">Bulan Terbelah di Langit Amerika</a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Burlian</a></li>
+                        <li><a class="h6" id="link" href="">Burung-Burung Rantau</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="C">
+        <div class="container">
+            <h1 class="display-1 text-start" style="font-family: Arial Rounded MT; font-size:40px; padding-top:7rem; color:#0DAA27;">C</h1>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Calon Imam</a></li>
+                        <li><a class="h6" id="link" href="">Canting</a></li>
+                        <li><a class="h6" id="link" href="">Cinta itu Luka</a></li>
+                        <li><a class="h6" id="link" href="gelas.html">Cinta di Dalam Gelas</a></li>
+                        <li><a class="h6" id="link" href="">Cerita Kapal Kertas</a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Critical Eleven</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="D">
+        <div class="container">
+            <h1 class="display-1 text-start" style="font-family: Arial Rounded MT; font-size:40px; padding-top:7rem; color:#0DAA27;">D</h1>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Daerah Tidak Bertuan</a></li>
+                        <li><a class="h6" id="link" href="">Dari Jendela SMP</a></li>
+                        <li><a class="h6" id="link" href="">Daun Yang Jatuh Tak Pernah Membenci Angin</a></li>
+                        <li><a class="h6" id="link" href="">Dear Nathan</a></li>
+                        <li><a class="h6" id="link" href="">Di Bawah Lindungan Ka'bah</a></li>
+                        <li><a class="h6" id="link" href="">Dilan: Dia Adalah Dilanku Tahun 1990</a></li>
+                        <li><a class="h6" id="link" href="">Dilan 2: Dia Adalah Dilanku Tahun 1991</a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Dongeng Calon Arang</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="E">
+        <div class="container">
+            <h1 class="display-1 text-start" style="font-family: Arial Rounded MT; font-size:40px; padding-top:7rem; color:#0DAA27;">E</h1>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Edensor</a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Entrok</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="F">
+        <div class="container">
+            <h1 class="display-1 text-start" style="font-family: Arial Rounded MT; font-size:40px; padding-top:7rem; color:#0DAA27;">F</h1>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Fifteen</a></li>
+                        <li><a class="h6" id="link" href="">Fleur</a></li>
+                        <li><a class="h6" id="link" href="">12 menit</a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Forty One</a></li>
+                        <li><a class="h6" id="link" href="">Freindster Freak!</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="G">
+        <div class="container">
+            <h1 class="display-1 text-start" style="font-family: Arial Rounded MT; font-size:40px; padding-top:7rem; color:#0DAA27;">G</h1>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Gadis Kretek</a></li>
+                        <li><a class="h6" id="link" href="">Gadis Pantai</a></li>
+                        <li><a class="h6" id="link" href="">Gajah Mada (Gajah Mada, #1)</a></li>
+                        <li><a class="h6" id="link" href="">Gelombang</a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">5 cm</a></li>
+                        <li><a class="h6" id="link" href="">9 Summers 10 Autumns</a></li>
+                        <li><a class="h6" id="link" href="">12 menit</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="H">
+        <div class="container">
+            <h1 class="display-1 text-start" style="font-family: Arial Rounded MT; font-size:40px; padding-top:7rem; color:#0DAA27;">H</h1>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Hafalan Sholat Delisa</a></li>
+                        <li><a class="h6" id="link" href="">Haniyah dan Ala di Rumah Teteruga</a></li>
+                        <li><a class="h6" id="link" href="">Hans</a></li>
+                        <li><a class="h6" id="link" href="">Harimau! Harimau!</a></li>
+                        <li><a class="h6" id="link" href="">Hendrick</a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Hujan</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="I">
+        <div class="container">
+            <h1 class="display-1 text-start" style="font-family: Arial Rounded MT; font-size:40px; padding-top:7rem; color:#0DAA27;">I</h1>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">I For You</a></li>
+                        <li><a class="h6" id="link" href="">Intelengensi Embun Pagi (Supernova #6)</a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href=""></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="J">
+        <div class="container">
+            <h1 class="display-1 text-start" style="font-family: Arial Rounded MT; font-size:40px; padding-top:7rem; color:#0DAA27;">J</h1>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Jalan Tak Ada Ujung</a></li>
+                        <li><a class="h6" id="link" href="">Jangan Ucapkan Cinta</a></li>
+                        <li><a class="h6" id="link" href="">Janshen</a></li>
+                        <li><a class="h6" id="link" href="">Jejak Langkah</a></li>
+                        <li><a class="h6" id="link" href="">Jingga Dan Senja</a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Jomblo: Sebuah Komedi Cinta</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="K">
+        <div class="container">
+            <h1 class="display-1 text-start" style="font-family: Arial Rounded MT; font-size:40px; padding-top:7rem; color:#0DAA27;">K</h1>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Kala</a></li>
+                        <li><a class="h6" id="link" href="">Kisah Untuk Geri</a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Koala Kumal</a></li>
+                        <li><a class="h6" id="link" href="">Kubah</a></li>
+                        <li><a class="h6" id="link" href="">Kura-kura Berjanggut</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="L">
+        <div class="container">
+            <h1 class="display-1 text-start" style="font-family: Arial Rounded MT; font-size:40px; padding-top:7rem; color:#0DAA27;">L</h1>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Larasati</a></li>
+                        <li><a class="h6" id="link" href="">Larung</a></li>
+                        <li><a class="h6" id="link" href="">Laut Bercerita</a></li>
+                        <li><a class="h6" id="link" href="">Laskar Pelangi</a></li>
+                        <li><a class="h6" id="link" href="">Lelaki Harimau</a></li>
+                        <li><a class="h6" id="link" href="">Lima Sekawan: Beraksi Kembali</a></li>
+                        <li><a class="h6" id="link" href="">Lima Sekawan: Di Pulau Harta</a></li>
+                        <li><a class="h6" id="link" href="">Lima Sekawan: Jo Anak Gelandangan</a></li>
+                        <li><a class="h6" id="link" href="">Lima Sekawan: Ke Sarang Penyeludup</a></li>
+                        <li><a class="h6" id="link" href="">Lima Sekawan: Melacak Jejak</a></li>
+                        <li><a class="h6" id="link" href="">Lima Sekawan: Memburu Kereta Api Hantu</a></li>
+                        <li><a class="h6" id="link" href="">Lima Sekawan: Menaklukan Agen Rahasia</a></li>
+                        <li><a class="h6" id="link" href="">Lima Sekawan: Nyaris Terjebak</a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Layar Terkembang</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="M">
+        <div class="container">
+            <h1 class="display-1 text-start" style="font-family: Arial Rounded MT; font-size:40px; padding-top:7rem; color:#0DAA27;">M</h1>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Manusia Kamar</a></li>
+                        <li><a class="h6" id="link" href="">Mata Yang Enak Dipandang</a></li>
+                        <li><a class="h6" id="link" href="">Marmut Merah Jambu</a></li>
+                        <li><a class="h6" id="link" href="">Manusia Setengah Salmon</a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Musashi</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="N">
+        <div class="container">
+            <h1 class="display-1 text-start" style="font-family: Arial Rounded MT; font-size:40px; padding-top:7rem; color:#0DAA27;">N</h1>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Napas Mayat</a></li>
+                        <li><a class="h6" id="link" href="">Nebula</a></li>
+                        <li><a class="h6" id="link" href="">Negeri 5 Menara</a></li>
+                        <li><a class="h6" id="link" href="">Negeri Bahagia</a></li>
+                        <li><a class="h6" id="link" href="">Negeri Di Ujung Tanduk</a></li>
+                        <li><a class="h6" id="link" href="">Negeri Para Bedebah</a></li>
+                        <li><a class="h6" id="link" href="">Negeri Senja</a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Namaku Mata Hari</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="O">
+        <div class="container">
+            <h1 class="display-1 text-start" style="font-family: Arial Rounded MT; font-size:40px; padding-top:7rem; color:#0DAA27;">O</h1>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">O</a></li>
+                        <li><a class="h6" id="link" href="">Obsesi</a></li>
+                        <li><a class="h6" id="link" href="">Olenka</a></li>
+                        <li><a class="h6" id="link" href="">Omen</a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Our Story</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="P">
+        <div class="container">
+            <h1 class="display-1 text-start" style="font-family: Arial Rounded MT; font-size:40px; padding-top:7rem; color:#0DAA27;">P</h1>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Pintu</a></li>
+                        <li><a class="h6" id="link" href="">Padang Bulan</a></li>
+                        <li><a class="h6" id="link" href="">Para Priyayi:Sebuah Novel</a></li>
+                        <li><a class="h6" id="link" href="">Partikel</a></li>
+                        <li><a class="h6" id="link" href="">Perahu Kertas</a></li>
+                        <li><a class="h6" id="link" href="">Pergi</a></li>
+                        <li><a class="h6" id="link" href="">Peter</a></li>
+                        <li><a class="h6" id="link" href="">Permainan Maut</a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Pulang</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Q">
+        <div class="container">
+            <h1 class="display-1 text-start" style="font-family: Arial Rounded MT; font-size:40px; padding-top:7rem; color:#0DAA27;">Q</h1>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Q</a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Quater Life Dilemma</a></li>
+                        <li><a class="h6" id="link" href="">Quater Life Fear</a></li>
+                        <li><a class="h6" id="link" href="">Que Queen</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="R">
+        <div class="container">
+            <h1 class="display-1 text-start" style="font-family: Arial Rounded MT; font-size:40px; padding-top:7rem; color:#0DAA27;">R</h1>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Ranah 3 Warna</a></li>
+                        <li><a class="h6" id="link" href="">Rantau 1 Muara</a></li>
+                        <li><a class="h6" id="link" href="">Rembulan Tenggelam di Wajahmu</a></li>
+                        <li><a class="h6" id="link" href="">Renjana</a></li>
+                        <li><a class="h6" id="link" href="">Rindu</a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Robin Hood</a></li>
+                        <li><a class="h6" id="link" href="">Ronggeng Dukuh Paruk</a></li>
+                        <li><a class="h6" id="link" href="">Rumah Kaca</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="S">
+        <div class="container">
+            <h1 class="display-1 text-start" style="font-family: Arial Rounded MT; font-size:40px; padding-top:7rem; color:#0DAA27;">S</h1>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Sabtu Bersama Bapak</a></li>
+                        <li><a class="h6" id="link" href="">Saman</a></li>
+                        <li><a class="h6" id="link" href="">Samudra di Ujung Jalan Setapak</a></li>
+                        <li><a class="h6" id="link" href="">Sang Pemimpi</a></li>
+                        <li><a class="h6" id="link" href="">Selena</a></li>
+                        <li><a class="h6" id="link" href="">Senyum Karyamin</a></li>
+                        <li><a class="h6" id="link" href="">Seperti Dendam, Rindu Harus Dibayar Tuntas</a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Sunshine Becomes You</a></li>
+                        <li><a class="h6" id="link" href="">Supernova: Ksatria, Puteri, Dan Bintang Jatuh</a></li>
+                        <li><a class="h6" id="link" href="">Supernova: Petir</a></li>
+                        <li><a class="h6" id="link" href="">Surat Kecil Untuk Tuhan</a></li>
+                        <li><a class="h6" id="link" href="">Student Guidebook For Dummies : Panduan Ngaco Pelajar Keren</a></li>
+                        <li><a class="h6" id="link" href="">Student Guidebook For Dummies 2: Pintar itu relatif, Nyontek Itu Alternatif</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="T">
+        <div class="container">
+            <h1 class="display-1 text-start" style="font-family: Arial Rounded MT; font-size:40px; padding-top:7rem; color:#0DAA27;">T</h1>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Tabula Rasa</a></li>
+                        <li><a class="h6" id="link" href="">Tentang Kamu</a></li>
+                        <li><a class="h6" id="link" href="">Tenggelamnya Kapal Van Der Wijck</a></li>
+                        <li><a class="h6" id="link" href="">The Chronicle of Audy: 4R</a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">The Midnight Library</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="U">
+        <div class="container">
+            <h1 class="display-1 text-start" style="font-family: Arial Rounded MT; font-size:40px; padding-top:7rem; color:#0DAA27;">U</h1>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href=""></a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href=""></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="V">
+        <div class="container">
+            <h1 class="display-1 text-start" style="font-family: Arial Rounded MT; font-size:40px; padding-top:7rem; color:#0DAA27;">V</h1>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Vandaria Saga: Masa Elir (Trilogi Elir, #2)</a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href=""></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="W">
+        <div class="container">
+            <h1 class="display-1 text-start" style="font-family: Arial Rounded MT; font-size:40px; padding-top:7rem; color:#0DAA27;">W</h1>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Weedflower</a></li>
+                        <li><a class="h6" id="link" href="">William</a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Winter In Tokyo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="X">
+        <div class="container">
+            <h1 class="display-1 text-start" style="font-family: Arial Rounded MT; font-size:40px; padding-top:7rem; color:#0DAA27;">X</h1>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">X-Men: God Loves, Man Kill</a></li>
+                        <li><a class="h6" id="link" href="">X-Men: The Dark Phoenix Saga</a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">XX</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Y">
+        <div class="container">
+            <h1 class="display-1 text-start" style="font-family: Arial Rounded MT; font-size:40px; padding-top:7rem; color:#0DAA27;">Y</h1>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href=""></a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href=""></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Z">
+        <div class="container">
+            <h1 class="display-1 text-start" style="font-family: Arial Rounded MT; font-size:40px; padding-top:7rem; color:#0DAA27;">Z</h1>
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href="">Ziarah: Sebuah Novel</a></li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li><a class="h6" id="link" href=""></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---Judul berdasarkan abjad dari Novel-->
+
+    <!--Button Back To Top-->
+    <button id="TopBtn" class="setan">
+        <div class="muka">
+            <div class="mata">
+                <span></span>
+                <span></span>
+            </div>
+            <div class="mulut"></div>
+        </div>
+
+        <div class="kaki">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </button>
+    <!--Button Back To Top-->
+
+    <!--footer-->
+    <footer class="p-2 text-center" style="background-color: #4E9F3D; margin-top: 85px;">
+      <p class="text-lg-center" style="font-family: Montserrat; font-size: 18px; color: black;">&copy 2021 All reserved | Design by Zhalz&Friend</p>
+    </footer>
+    <!--footer-->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/dark-mode-switch.js"></script>
+    <script src="js/Jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                if($(this).scrollTop() > 100){
+                    $("#TopBtn").fadeIn();
+                }else{
+                    $("#TopBtn").fadeOut();
+                }
+            });
+
+            $("#TopBtn").click(function(){
+                $('html, body').animate({scrollTop :1},10);
+            });
+        });
+    </script>
+</body>
+</html>

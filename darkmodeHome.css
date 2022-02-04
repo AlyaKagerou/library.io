@@ -1,0 +1,52 @@
+/* DarkmodeHome */
+[data-theme="dark"] {
+    background-color: black !important;
+}
+[data-theme="dark"] .display-1{
+    color: #91c788 !important;
+}
+[data-theme="dark"] .h6 {
+    color: whitesmoke !important;
+}
+[data-theme="dark"] .navbar{
+    color: #91c788 !important;
+    background-color: #1B262C !important;
+}
+[data-theme="dark"] .navbar-brand{
+    color: #91c788 !important;
+}
+[data-theme="dark"] .nav-link{
+    color:#91c788 !important;
+}
+[data-theme="dark"] .dropdown-item{
+    color: #91c788 !important;
+}
+[data-theme="dark"] .dropdown-menu{
+    background-color: #191a19 !important;
+}
+[data-theme="dark"] .btn{
+    background-color: #91c788 !important;
+    color:black !important;
+}
+[data-theme="dark"] .card{
+    background-color: #191a19 !important;
+}
+[data-theme="dark"] .card-title{
+    color: whitesmoke !important;
+}
+[data-theme="dark"] .card-text{
+    color: whitesmoke !important;
+}
+[data-theme="dark"] .p-2{
+    background-color: #91c788 !important;
+}
+[data-theme="dark"] .text-lg-center{
+    color: black !important;
+}
+[data-theme= "dark"] .mb-3 {
+    color: #91c788 !important;
+}
+[data-theme="dark"].p{
+    color:whitesmoke !important;
+}
+/* DarkmodeHome */
