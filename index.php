@@ -5,7 +5,7 @@ if(isset($_POST['login'])){
   $user = $_POST['username'];
   $pass = $_POST['password'];
 
-  if($user == 'Alya Zalfa' AND $pass == '150500') {
+  if($user == 'Admin' AND $pass == '123456') {
     //membuat session
     $_SESSION['berhasil']= true;
     header("location: Home.php");
