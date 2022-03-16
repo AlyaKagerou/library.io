@@ -188,7 +188,7 @@ if(!$_SESSION['berhasil']) {
                             </ul>
                         </li>
                         <li class="nav-item" style="margin: 5px;">
-                            <a class="btn" style="background-color:#0DAA27;" href="https://github.com/AlyaKagerou"><i class="bi bi-github" style="color:#000; margin: 1px; font-family: Arial Rounded MT;">   Github</i></a>
+                            <a class="btn" style="background-color:#0DAA27;" href="https://github.com/AlyaKagerou/library.io"><i class="bi bi-github" style="color:#000; margin: 1px; font-family: Arial Rounded MT;">   Github</i></a>
                         </li>
                     </ul>
                 </div>
